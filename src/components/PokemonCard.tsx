@@ -1,3 +1,5 @@
+import "./PokemonCard.css";
+
 interface PokemonCardProps {
   pokemon: {
     name: string;
