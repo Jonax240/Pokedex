@@ -1,5 +1,5 @@
-import { useState } from "react";
-import "./App.css";
+import { useState, useEffect } from "react";
+// import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
 
@@ -38,13 +38,22 @@ function App() {
     throw new Error("Invalid pokemon name");
   }
 
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
+
   return (
     <div>
       <nav>
         <ul>
           {pokemonList.map((pokemon) => (
             <li key={pokemon.name}>
-              <button onClick={() => setPokemonName(pokemon.name)}>
+              <button
+                onClick={() => {
+                  setPokemonName(pokemon.name);
+                  pokemon.name === "pikachu" && alert("pika pikachu !!!");
+                }}
+              >
                 {pokemon.name}
               </button>
             </li>
